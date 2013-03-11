@@ -3,8 +3,11 @@ basePlate();
 module basePlate(){
 	difference(){
 		cylinder(5,90, 90);
-		markerRing(30, 20, 0);
-		markerRing(40, 30, 0);
+		union(){
+			for(ringNumber = [1, 5, 10, 18]) {
+				markerRing(30 + ringNumber * 1.5, 20 + ringNumber / 2, 0);
+			}
+		}
 	}
 }
 
