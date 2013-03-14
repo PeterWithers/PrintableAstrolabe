@@ -1,6 +1,41 @@
-basePlate();
+// Created: 2013-03-10
+// Author: Peter Withers
 
-module basePlate(){
+#baseTympan();
+topRete();
+pointerAlidade();
+
+module pointerAlidade(){
+	rotate(a=[0,0,160]) difference(){
+		translate([0, 0, 10]) {
+			union(){
+				cylinder(5, 10, 10);
+				cube(size = [5, 90, 5], center = false);
+			}
+		}
+		cylinder(20, 5, 5);
+	}
+}
+
+module topRete(){
+	difference(){
+		translate([0, 0, 5]) {
+			cylinder(5, 90, 90);
+		}
+		difference(){
+			cylinder(15, 80, 80);
+			union() {
+				cube(size = [5, 200, 30], center = true);
+				translate([20, 0, 0]) difference(){
+					cylinder(15, 60, 60);
+					cylinder(15, 55, 55);
+				}
+			}
+		}
+	}
+}
+
+module baseTympan(){
 	difference(){
 		cylinder(5,90, 90);
 		union(){
