@@ -1,5 +1,6 @@
 // Created: 2013-03-10
 // Author: Peter Withers
+// Licensed as GPL 2
 
 #baseTympan();
 topRete();
